@@ -1,3 +1,13 @@
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -23,4 +33,34 @@ body {
   border: 2px solid black;
   border-top: 0;
   display: block;
+}
+
+.preview__rules {
+  margin-bottom: 35px;
+}
+
+.rules__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.preview__control {
+  margin-bottom: 60px;
+}
+
+.preview__title {
+  font-size: 22px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.control__item {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+}
+
+.preview__start {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
 }
