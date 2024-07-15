@@ -21,14 +21,34 @@ canvas = document.createElement('canvas');
 preview() {
   this.container.textContent = '';
   const preview = document.createElement('div');
-  preview.innerHTML = 'Нажмите "ENTER", чтобы начать игру';
+  preview.innerHTML = `
+  <div class="preview__rules rules">
+    <h2 class="rules__title preview__title">Правила игры</h2>
+    <ul>
+      <li class="rules__item">Перемещать и поворачивать падающие фигуры так, чтобы заполнять ими ряды</li>
+      <li class="rules__item">Полностью заполнив один ряд, игрок получает 100 очков. Если сразу заполнено два ряда — 300 очков, три ряда — 700 очков, четыре ряда — 1500 очков</li>
+      <li class="rules__item">После заполнения каждой десятой линии повышается уровень и скорость падения фигур</li>
+    </ul>
+  </div>
+  <div class="preview__control control">
+    <h2 class="control__title preview__title">Управление с помощью кнопок на экране или кнопок на клавиатуре</h2>
+    <ul class="control__list">
+      <li class="control__item"><span>&#8593;</span> поворот фигуры на 90&deg;</li>
+      <li class="control__item"><span>&#8594;</span> передвижение фигуры вправо</li>
+      <li class="control__item"><span>&#8592;</span> перемещение фигуры влево</li>
+      <li class="control__item"><span>&#8595;</span> ускорение движения фигуры вниз</li>
+      <!-- <li class="control__item">Кнопка "Пауза" или "Пробел" на клавиатуре остановить/продолжить игру</li> -->
+    </ul>
+  </div>
+  <div class="preview__start">Нажмите "ENTER", чтобы начать игру</div>
+  `;
   preview.style.cssText = `
     border: 3px solid black;
     font-size: 18px;
-    text-align: center;
     padding: 50px;
     grid-column: 1 / 3;
   `;
+  preview.classList.add('preview');
 
   this.container.append(preview);
 }
