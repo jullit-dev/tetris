@@ -33,7 +33,7 @@ preview() {
   <div class="preview__control control">
     <h2 class="control__title preview__title">Управление с помощью кнопок на экране или кнопок на клавиатуре</h2>
     <ul class="control__list">
-      <li class="control__item"><span>&#8593;</span> поворот фигуры на 90&deg;</li>
+      <li class="control__item"><span>&#8635; &nbsp; &nbsp; &#8593;</span> поворот фигуры на 90&deg;</li>
       <li class="control__item"><span>&#8594;</span> передвижение фигуры вправо</li>
       <li class="control__item"><span>&#8592;</span> перемещение фигуры влево</li>
       <li class="control__item"><span>&#8595;</span> ускорение движения фигуры вниз</li>
@@ -60,6 +60,35 @@ init() {
   this.container.append(this.canvas);
   this.canvas.width = SIZE_BLOCK * COLUMNS;
   this.canvas.height = SIZE_BLOCK * ROWS;
+}
+
+createBlockControl() {
+  const controlBlock = document.createElement('div');
+  controlBlock.style.cssText = `
+    border: 2px solid black;
+    font-size: 30px;
+    text-align: start;
+    padding: 20px;
+    grid-area: control;
+  `;
+
+  const upButton = document.createElement('button');
+  const leftButton = document.createElement('button');
+  const rightButton = document.createElement('button');
+  const downButton = document.createElement('button');
+
+  upButton.innerHTML = '&#8635';
+  leftButton.innerHTML = '&#8592';
+  rightButton.innerHTML = '&#8594';
+  downButton.innerHTML = '&#8595';
+
+  upButton.id = 'up';
+  leftButton.id = 'left';
+  rightButton.id = 'right';
+  downButton.id = 'down';
+
+  controlBlock.append(upButton, leftButton, rightButton, downButton);
+  this.container.append(controlBlock);
 }
 
 createBlockScore() {

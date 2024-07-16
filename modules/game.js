@@ -184,7 +184,7 @@ export class Game {
     }
   }
 
-  createUpdatePanels(showScore, showNextTetramino) {
+  createUpdatePanels(showControl, showScore, showNextTetramino) {
     showScore(this.lines, this.score, this.level, this.record);
     showNextTetramino(this.nextTetromino.block);
 

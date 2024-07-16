@@ -15,9 +15,10 @@ export class Controller {
 
   start() {
     this.view.showArea(this.game.viewArea);
+    const showControl = this.view.createBlockControl();
     const showScore = this.view.createBlockScore();
     const showNextTetramino = this.view.createBlockNextTetromino();
-    this.game.createUpdatePanels(showScore, showNextTetramino);
+    this.game.createUpdatePanels(showControl, showScore, showNextTetramino);
 
     const tick = () => {
       const time = (1100 - 100 * this.game.level);
@@ -50,8 +51,31 @@ export class Controller {
           this.game.rotateTetromino();
           this.view.showArea(this.game.viewArea);
         break;
-    
       }
+    });
+
+    const upButton = document.getElementById('up');
+    upButton.addEventListener('click', () => {
+      this.game.rotateTetromino();
+      this.view.showArea(this.game.viewArea);
+    });
+
+    const leftButton = document.getElementById('left');
+    leftButton.addEventListener('click', () => {
+      this.game.moveLeft();
+      this.view.showArea(this.game.viewArea);
+    });
+
+    const rightButton = document.getElementById('right');
+    rightButton.addEventListener('click', () => {
+      this.game.moveRight();
+      this.view.showArea(this.game.viewArea);
+    });
+
+    const downButton = document.getElementById('down');
+    downButton.addEventListener('click', () => {
+      this.game.moveDown();
+      this.view.showArea(this.game.viewArea);
     });
   }
 };

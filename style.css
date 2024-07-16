@@ -25,6 +25,7 @@ body {
   gap: 50px;
   align-items: flex-start;
   grid-template-areas: 
+  'game control'
   'game score'
   'game next';
 }
@@ -56,7 +57,7 @@ body {
 
 .control__item {
   display: grid;
-  grid-template-columns: 30px 1fr;
+  grid-template-columns: 70px 1fr;
 }
 
 .preview__start {
