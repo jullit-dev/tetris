@@ -40,7 +40,10 @@ preview() {
       <!-- <li class="control__item">Кнопка "Пауза" или "Пробел" на клавиатуре остановить/продолжить игру</li> -->
     </ul>
   </div>
-  <div class="preview__start">Нажмите "ENTER", чтобы начать игру</div>
+  <div class="preview__start">
+    <button class="preview__start-button" id="start">СТАРТ</button>
+    <span>или нажмите "ENTER" на клавиатуре</span>
+  </div>
   `;
   preview.style.cssText = `
     width: 400px;
@@ -130,25 +133,25 @@ createBlockControl() {
     grid-area: around;
     border-radius: 50%;
     height: 45px;
-    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5)
+    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5);
   `;
   leftButton.style.cssText = `
     grid-area: left;
     border-radius: 50%;
     height: 45px;
-    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5)
+    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5);
   `;
   rightButton.style.cssText = `
     grid-area: right;
     border-radius: 50%;
     height: 45px;
-    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5)
+    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5);
   `;
   downButton.style.cssText = `
     grid-area: down;
     border-radius: 50%;
     height: 45px;
-    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5)
+    box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5);
   `;
 
   controlBlock.append(aroundButton, leftButton, rightButton, downButton);

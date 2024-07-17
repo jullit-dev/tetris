@@ -21,14 +21,19 @@ button {
 }
 
 button:active {
-  transform: scale(0.7);
+  transform: scale(0.7) !important; 
+}
+
+button:hover {
+  box-shadow: 0px 0px 15px 1px rgba(10, 0, 60, 0.7) !important;
 }
 
 body {
   font-family: sans-serif;
-  background: url('../img/bg-tetris.jpg') no-repeat;
+  background: url('../img/bg-tetris.png') no-repeat;
   background-size: cover;
   padding-top: 30px;
+  height: 100vh;
 }
 
 .tetris {
@@ -91,7 +96,19 @@ body {
 }
 
 .preview__start {
-  text-align: center;
-  font-size: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  font-size: 14px;
+}
+
+.preview__start-button {
+  margin-bottom: 15px;
+  background-color: #f2efff;
+  padding: 17px 27px;
+  border: 3px solid #4B0082;
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px 0px rgba(10, 0, 60, 0.5);
+  font-size: 24px;
   font-weight: 700;
 }
