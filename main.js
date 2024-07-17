@@ -10,4 +10,13 @@ const game = new Game();
 const view = new View(document.querySelector('.container'));
 const controller = new Controller(game, view);
 
-controller.init('Enter');
+const start = document.getElementById('start');
+start.addEventListener('click', () => {
+  controller.init();
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+    controller.init();
+  };
+});

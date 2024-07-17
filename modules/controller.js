@@ -4,13 +4,9 @@ export class Controller {
     this.view = view;
   }
 
-  init(codeKey) {
-    window.addEventListener('keydown', event => {
-      if (event.code === codeKey) {
-        this.view.init();
-        this.start();
-      }
-    })
+  init() {
+    this.view.init();
+    this.start();
   }
 
   start() {
@@ -32,30 +28,8 @@ export class Controller {
 
     tick();
 
-    window.addEventListener('keydown', (event) => {
-      const key = event.code;
-      switch (key) {
-        case "ArrowLeft":
-          this.game.moveLeft();
-          this.view.showArea(this.game.viewArea);
-        break;
-        case "ArrowRight":
-          this.game.moveRight();
-          this.view.showArea(this.game.viewArea);
-        break;
-        case "ArrowDown":
-          this.game.moveDown();
-          this.view.showArea(this.game.viewArea);
-        break;
-        case "ArrowUp":
-          this.game.rotateTetromino();
-          this.view.showArea(this.game.viewArea);
-        break;
-      }
-    });
-
-    const upButton = document.getElementById('up');
-    upButton.addEventListener('click', () => {
+    const aroundButton = document.getElementById('around');
+    aroundButton.addEventListener('click', () => {
       this.game.rotateTetromino();
       this.view.showArea(this.game.viewArea);
     });
@@ -76,6 +50,46 @@ export class Controller {
     downButton.addEventListener('click', () => {
       this.game.moveDown();
       this.view.showArea(this.game.viewArea);
+    });
+
+    window.addEventListener('keydown', (event) => {
+      const key = event.code;
+      switch (key) {
+        case "ArrowLeft":
+          leftButton.click();
+          leftButton.style.transform = 'scale(0.7)';
+        break;
+        case "ArrowRight":
+          rightButton.click();
+          rightButton.style.transform = 'scale(0.7)';
+        break;
+        case "ArrowDown":
+          downButton.click();
+          downButton.style.transform = 'scale(0.7)';
+        break;
+        case "ArrowUp":
+          aroundButton.click();
+          aroundButton.style.transform = 'scale(0.7)';
+        break;
+      }
+    });
+
+    window.addEventListener('keyup', (event) => {
+      const key = event.code;
+      switch (key) {
+        case "ArrowLeft":
+          leftButton.style.transform = 'scale(1)';
+        break;
+        case "ArrowRight":
+          rightButton.style.transform = 'scale(1)';
+        break;
+        case "ArrowDown":
+          downButton.style.transform = 'scale(1)';
+        break;
+        case "ArrowUp":
+          aroundButton.style.transform = 'scale(1)';
+        break;
+      }
     });
   }
 };
