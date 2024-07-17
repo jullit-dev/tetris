@@ -54,7 +54,7 @@ export class Controller {
       }
     });
 
-    const upButton = document.getElementById('up');
+    const upButton = document.getElementById('around');
     upButton.addEventListener('click', () => {
       this.game.rotateTetromino();
       this.view.showArea(this.game.viewArea);
