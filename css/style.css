@@ -29,6 +29,7 @@ button:hover {
 }
 
 body {
+  box-sizing: border-box;
   font-family: sans-serif;
   background: url('../img/bg-tetris.png') no-repeat;
   background-size: cover;
