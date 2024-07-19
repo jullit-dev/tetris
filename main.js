@@ -16,7 +16,7 @@ start.addEventListener('click', () => {
 });
 
 window.addEventListener('keydown', (event) => {
-  if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+  if ((event.code === 'Enter' || event.code === 'NumpadEnter') && (document.querySelector('.preview'))) {
     controller.init();
   };
 });
