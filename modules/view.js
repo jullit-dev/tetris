@@ -246,4 +246,34 @@ showArea(area) {
     }
   }
 };
+
+createModalGameOver(score, record) {
+  const modal = document.createElement('div');
+  modal.classList.add('modal')
+  modal.innerHTML = `
+    <div class="modal__container">
+      <h2 class="modal__title">Конец игры</h2>
+      <div class="modal__info">
+        <p class="modal__score">Счет: ${score}</p>
+        <p class="modal__record">Pекорд: ${record}</p>
+      </div>
+      <button class="modal__button" onclick="location.reload();">Начать заново</button>
+    </div>
+  `
+  
+  this.container.append(modal);
+}
+
+addNewRecord() {
+  const modalInfo = document.querySelector('.modal__info');
+  const newRecord = document.createElement('p');
+  newRecord.classList.add('modal__new-record');
+  newRecord.textContent = 'Новый рекорд!';
+  newRecord.style.cssText = `
+    color: #4B0082;
+    font-size: 20px;
+    font-weight: 700;
+  `
+  modalInfo.append(newRecord);
+}
 }
