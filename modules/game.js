@@ -130,9 +130,6 @@ export class Game {
   }
 
   createGameOver(score, record) {
-    console.log(222)
-    console.log(score)
-    console.log(record)
     view.createModalGameOver(score, record)
   }
 
@@ -157,7 +154,7 @@ export class Game {
 
     if (this.gameOver) {
       this.createGameOver(this.score, this.record);
-      if (this.score > this.record) {
+      if (this.score = this.record) {
         view.addNewRecord();
       }
     }
@@ -210,7 +207,4 @@ export class Game {
       showNextTetramino(this.nextTetromino.block);
     };
   }
-
-
-
 };
