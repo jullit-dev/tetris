@@ -1,5 +1,8 @@
 import { tetrominoes } from './tetrominoes.js';
 import { ROWS, COLUMNS } from '../main.js';
+import { View } from './view.js';
+
+const view = new View(document.querySelector('.container'));
 
 export class Game {
 
@@ -126,6 +129,13 @@ export class Game {
     return true;
   }
 
+  createGameOver(score, record) {
+    console.log(222)
+    console.log(score)
+    console.log(record)
+    view.createModalGameOver(score, record)
+  }
+
   stopMove() {
     const {x, y, block: tetromino} = this.activeTetromino;
 
@@ -144,6 +154,13 @@ export class Game {
     this.updatePanels();
 
     this.gameOver = !this.checkOutPosition(this.activeTetromino.x, this.activeTetromino.y);
+
+    if (this.gameOver) {
+      this.createGameOver(this.score, this.record);
+      if (this.score > this.record) {
+        view.addNewRecord();
+      }
+    }
   }
 
   clearRow() {
@@ -193,4 +210,7 @@ export class Game {
       showNextTetramino(this.nextTetromino.block);
     };
   }
+
+
+
 };
