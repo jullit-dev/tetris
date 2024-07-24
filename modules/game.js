@@ -10,6 +10,7 @@ export class Game {
   lines = 0;
   level = 1;
   record = localStorage.getItem('tetris-record') || 0;
+  previousRecord = this.record;
 
   points = [0, 100, 300, 700, 1500];
 
@@ -154,7 +155,7 @@ export class Game {
 
     if (this.gameOver) {
       this.createGameOver(this.score, this.record);
-      if (this.score = this.record) {
+      if (this.score > this.previousRecord) {
         view.addNewRecord();
       }
     }
