@@ -34,7 +34,7 @@ preview() {
     <h2 class="control__title preview__title">Управление с помощью кнопок на экране или кнопок на клавиатуре</h2>
     <ul class="control__list">
       <li class="control__item"><span>&#8635; &nbsp; &nbsp; &#8593;</span> поворот фигуры на 90&deg;</li>
-      <li class="control__item"><span>&#8594;</span> передвижение фигуры вправо</li>
+      <li class="control__item"><span>&#8594;</span> перемещение фигуры вправо</li>
       <li class="control__item"><span>&#8592;</span> перемещение фигуры влево</li>
       <li class="control__item"><span>&#8595;</span> ускорение движения фигуры вниз</li>
       <!-- <li class="control__item">Кнопка "Пауза" или "Пробел" на клавиатуре остановить/продолжить игру</li> -->
