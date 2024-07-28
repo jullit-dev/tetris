@@ -19,4 +19,7 @@ window.addEventListener('keydown', (event) => {
   if ((event.code === 'Enter' || event.code === 'NumpadEnter') && (document.querySelector('.preview'))) {
     controller.init();
   };
+  if ((event.code === 'Enter' || event.code === 'NumpadEnter') && (document.querySelector('.modal'))) {
+    location.reload();
+  };
 });
